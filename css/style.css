@@ -1,0 +1,199 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,500;1,900&display=swap');
+*{
+    font-family: 'Poppins',cursive;
+}
+body{
+    color: azure;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: skyblue
+}
+
+/* warna teks popup */
+h2 {
+color: rgba(255, 255, 255, 0.801);
+}
+p {
+    color: rgb(255, 255, 255);
+}
+
+
+/* fitur popup */
+.open-popup-btn {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.open-popup-btn:hover {
+    background-color: #2980b9;
+}
+
+/* Gaya Popup */
+.popup {
+    display: none; 
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6); /* Warna latar belakang semi-transparan */
+    z-index: 1000; /* Pastikan popup muncul di atas elemen lain */
+    justify-content: center;
+    align-items: center;
+}
+
+/* isiPopup */
+.popup-content {
+    background-color: rgb(32, 105, 201);
+    padding: 20px;
+    border-radius: 10px;
+    width: 400px;
+    max-width: 90%;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    position: relative; /* Untuk posisi tombol close */
+    z-index: 1001; /* Konten popup di atas latar belakang */
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+/* Tombol Tutup */
+.close-btn {
+    position: absolute;
+    top: 10px; /* Jarak dari atas */
+    right: 10px; /* Jarak dari kanan */
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    cursor: pointer;
+    transition: color 0.3s ease;
+    z-index: 1002; /* Tombol close di atas konten */
+}
+
+.close-btn:hover {
+    color: #e74c3c; /* Warna hover */
+}
+
+/* Animasi popup */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+
+.greetings{
+    font-size: 6rem;
+    font-weight: 350;
+    text-align: center;
+}
+
+  
+.greetings > span{
+    animation: glow 2s ease-in-out infinite;
+}
+
+@keyframes glow{
+    0%, 100%{
+        color: #0931b4;
+        text-shadow: 0 0 12px #02171a, 0 0 50px #1859e6, 0 0 100px #1859e6;
+    }
+    10%, 90%{
+        color: #05628d;
+        text-shadow: none;
+    }
+}
+
+.greetings {
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 1px solid;
+    width: 0;
+    animation: typing;
+    animation-duration: 5s;
+    animation-timing-function: steps(30, end);
+    animation-fill-mode: forwards;
+  }
+    
+  @keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+  }
+.greetings > span:nth-child(2){
+    animation-delay: .2s ;
+}
+.greetings > span:nth-child(3){
+    animation-delay: .4s ;
+}
+.greetings > span:nth-child(4){
+    animation-delay: .6s;
+}
+.greetings > span:nth-child(5){
+    animation-delay: .8s;
+}
+
+.description{
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+.button a{
+    text-decoration: none;
+    font-size: 1rem;
+    color: #111;
+}
+
+@media screen and (max-width:574px){
+    .greetings{
+        display: block;
+        font-size: 3rem;
+        font-weight: 500;
+        text-align: center;
+    }
+    .description{
+        font-size: 1rem;
+    }
+    
+    .button a{
+        font-size: .5rem;
+    }
+}
+
+.button button {
+    border: none;
+    padding: 10px 15px;
+    font-size: 15x;
+    text-align: center;
+    cursor: pointer;
+    color: #fff;
+    background-color: #0ca5bc;
+    border-radius: 30px;
+    box-shadow: 0 5px #999;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  
+  .button button:hover {
+    background-color: #007095;
+  }
+  
+  .button button:active {
+    background-color: #007095;
+    box-shadow: 0 5px rgb(25, 25, 25);
+    transform: translateY(5px);
+  }
+  
+
