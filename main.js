@@ -2,31 +2,22 @@ onload = () =>{
         document.body.classList.remove("container");
 };
 
-// Ambil elemen popup dan tombol close
-// Ambil elemen popup, tombol close, dan konten baru
+
+// Ambil elemen-elemen penting
+const showPopupBtn = document.getElementById('show-popup');
 const popup = document.getElementById('popup');
-const closePopupBtn = document.getElementById('close-popup');
-const newContent = document.getElementById('new-content');
+const continueBtn = document.getElementById('popup-continue');
 
-// Tampilkan popup saat halaman dimuat
-window.onload = function() {
-    popup.style.display = 'flex';  // Tampilkan popup
-}
+// Tampilkan popup ketika tombol "klik ini yaa" ditekan
+showPopupBtn.addEventListener('click', () => {
+    popup.style.display = 'flex'; // Tampilkan popup
+});
 
-// Tutup popup ketika tombol close ditekan
-closePopupBtn.onclick = function() {
-    popup.style.display = 'none';  // Sembunyikan popup
-    newContent.style.display = 'block';  // Tampilkan konten baru setelah popup ditutup
-}
-
-// Tutup popup jika area di luar popup diklik
-window.onclick = function(event) {
-    if (event.target === popup) {
-        popup.style.display = 'none';  // Sembunyikan popup jika klik di luar area popup
-        newContent.style.display = 'block';  // Tampilkan konten baru setelah popup ditutup
-    }
-}
-
+// Beralih ke halaman berikutnya setelah tombol "Lanjut" ditekan
+continueBtn.addEventListener('click', () => {
+    popup.style.display = 'none'; // Sembunyikan popup
+    window.location.href = 'flower.html'; // Pindah ke halaman kedua
+});
 
 
 // // pop up
@@ -44,7 +35,7 @@ function closePopup() {
 
 
 
-//audio
+audio
 const audio = document.getElementById('background-music');
 
 // Mengambil posisi audio terakhir dari localStorage
